@@ -65,7 +65,19 @@ def compressed_stack_length(lst):
         0
     """
     # TODO: Implement your solution here
-    pass
+    lst1=[]
+    if len(lst)==0:
+        return 0
+    lst1.append(lst[0])
+    for i in range(1,len(lst)):
+        if lst[i]==lst[i-1]:
+            if len(lst1)!=0:
+                lst1.remove(lst[i])
+            else:
+                lst1.append(lst[i])
+        else:
+            lst1.append(lst[i])
+    return len(lst1)
 
 
 if __name__ == "__main__":
