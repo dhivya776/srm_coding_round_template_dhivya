@@ -67,7 +67,18 @@ def find_overloaded_users(events):
         set()
     """
     # TODO: Implement your solution here
-    pass
+    if len(events)==0:
+        return "set()"
+    res=set()
+    for i in range(0,len(events)-2):
+        if events[i][0] == events[i+2][0]:
+            if events[i+2][1]-events[i][1] < 10:
+                res.add(events[i][0])
+    if len(res)!=0:
+        return res
+    else:
+        return "set()"
+        
 
 
 if __name__ == "__main__":
